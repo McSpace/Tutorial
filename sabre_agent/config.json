@@ -1,0 +1,36 @@
+{
+  "agent_name": "sabre-flight-search",
+  "version": "1.0.0",
+  "description": "Expert agent for searching flight tickets using Sabre Red 360 terminal commands",
+  "capabilities": [
+    "Flight availability search",
+    "Multi-step search planning",
+    "Result interpretation and analysis",
+    "Adaptive search strategies",
+    "Alternative options suggestion"
+  ],
+  "api_config": {
+    "environment": "cert",
+    "base_url": "https://webservices.cert.platform.sabre.com",
+    "credentials": {
+      "username": "302596",
+      "password": "lon23don",
+      "pcc": "U3VL"
+    }
+  },
+  "tools": {
+    "sabre_api": {
+      "path": "./tools/sabre_api.py",
+      "type": "python",
+      "description": "Execute Sabre Red 360 terminal commands via SOAP API"
+    }
+  },
+  "references": {
+    "command_guide": "../SABRE_RED_360_TICKET_SEARCH_GUIDE.md",
+    "agent_prompt": "./agent_prompt.md"
+  },
+  "agent_type": "task-executor",
+  "max_iterations": 10,
+  "requires_planning": true,
+  "can_adapt_plan": true
+}
